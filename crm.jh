@@ -45,12 +45,8 @@ relationship ManyToOne {
 }
 relationship OneToMany {
  Customer{order} to ProductOrder{customer(email) required},
- ProductOrder{orderItem} to OrderItem{order(code) required}
-,
+ ProductOrder{orderItem} to OrderItem{order(code) required},
 }
-service Product, Customer, ProductOrder, OrderItem with
-serviceClass
-paginate Product, Customer, ProductOrder, OrderItem with
-pagination
-microservice Customer, Product, ProductOrder, OrderItem with
-crm
+service Product, Customer, ProductOrder, OrderItem with serviceClass
+paginate Product, Customer, ProductOrder, OrderItem with pagination
+microservice Customer, Product, ProductOrder, OrderItem with crm
